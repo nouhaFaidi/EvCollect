@@ -158,6 +158,7 @@ public class Getwebjson extends Activity implements View.OnClickListener {
                 tableau = p.split( texte );
                 System.out.println( "****************   " + tableau.length + "   *************" );
 
+
                 for (int i = 0; i < tableau.length; i++) {
                     //System.out.println( "mini appliction" + tableau[i] );
                     slst1 = new ArrayList<String>();
