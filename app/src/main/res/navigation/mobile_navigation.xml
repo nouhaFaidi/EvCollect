@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.evcollect.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            app:destination="@id/nav_home_second" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_collecteur"
+        android:name="com.example.evcollect.ui.collecteur.CollecteurFragment"
+        android:label="@string/menu_Collecteurs"
+        tools:layout="@layout/collecteur_fragment"
+
+
+    />
+
+    <fragment
+        android:id="@+id/nav_home_second"
+        android:name="com.example.evcollect.ui.home.HomeFragment"
+        android:label="@string/home_second"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
+            app:destination="@id/nav_home" />
+
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.evcollect.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_Formulaires"
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_nav_Sombre"
+            app:destination="@id/nav_Sombre" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_Maps"
+        android:name="com.example.evcollect.ui.maps.MapsFragment"
+        android:label="@string/menu_Map"
+        tools:layout="@layout/maps_fragment" />
+    <fragment
+        android:id="@+id/nav_Langue"
+        android:name="com.example.evcollect.ui.langue.LangueFragment"
+        android:label="@string/menu_Langue"
+        tools:layout="@layout/langue_fragment" />
+    <fragment
+        android:id="@+id/nav_Sombre"
+        android:name="com.example.evcollect.ui.modesombre.ModeSombreFragment"
+        android:label="@string/menu_Sombre"
+        tools:layout="@layout/mode_sombre_fragment" >
+        <action
+            android:id="@+id/action_nav_Sombre_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+    </fragment>
+
+
+</navigation>
